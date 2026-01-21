@@ -1,53 +1,45 @@
-# SmartConsole Findings Generator
+# Firewall Assurance Automation
 
 ## Overview
-SmartConsole Findings Generator is a Python-based automation tool designed to analyze CSV exports from Check Point SmartConsole and produce structured firewall policy findings. The tool supports firewall assurance, compliance assessments, and risk reporting by converting raw policy data into actionable findings aligned with assessment workflows.
+Firewall Assurance Automation is a Python-based tool designed to analyze CSV exports from Check Point SmartConsole and automatically generate standardized firewall policy findings. The tool supports firewall assurance, compliance assessments, and risk reporting by converting raw policy data into structured, review-ready outputs.
 
-This project is intended for use in controlled enterprise or government environments where auditability, traceability, and consistency are critical.
+This project emphasizes repeatability, traceability, and analyst oversight, aligning with enterprise and DoD-style assessment workflows.
 
 ---
 
-## Key Features
-- Parses Check Point SmartConsole CSV exports
-- Identifies potentially risky or non-compliant firewall rules
-- Classifies findings by risk level (High / Medium / Low)
-- Generates structured outputs suitable for assessment reports
-- Supports repeatable and auditable analysis workflows
+## Key Capabilities
+- Ingests Check Point SmartConsole CSV policy exports
+- Normalizes rule data for consistent analysis
+- Automatically flags common firewall policy risks:
+  - Overly broad source or destination definitions
+  - Broad network subnets
+  - Unrestricted services (ANY)
+  - Allowed traffic without logging
+- Assigns explainable risk levels (High / Medium / Low)
+- Generates analyst-ready findings and remediation guidance
+- Maps findings to compliance references (STIG / SRG / CIS / NIST)
+- Produces a single Excel workbook suitable for assessment and reporting use
 
 ---
 
 ## Intended Use
-This tool is designed to assist with:
+This tool is intended to assist with:
 - Firewall Assurance Program (FAP) activities
-- Security control assessments
-- Configuration reviews and change validation
+- Configuration and policy reviews
+- Risk identification and prioritization
 - Compliance alignment and reporting support
 
-It does **not** make live changes to firewall configurations and does **not** interface directly with management or enforcement planes.
+The tool **does not** make live changes to firewall configurations and **does not** connect directly to firewall management systems.
 
----
-
-## Input
-- CSV exports generated from Check Point SmartConsole  
-- Exports should represent firewall policy rules or related configuration data
-
-> **Note:** Sample inputs included in this repository (if any) are sanitized and contain no real network, customer, or system data.
-
----
-
-## Output
-Depending on configuration, the tool may produce:
-- Structured findings (CSV, JSON, or text)
-- Risk categorizations
-- Data suitable for integration into formal assessment or reporting templates
-
-Generated outputs should be reviewed by qualified personnel before inclusion in official reports.
+All outputs should be reviewed and validated by a qualified analyst prior to inclusion in formal reports.
 
 ---
 
 ## Requirements
-- Python 3.x
-- Required Python packages listed in `requirements.txt`
+- Python 3.9+
+- Python packages:
+  - `pandas`
+  - `openpyxl`
 
 Install dependencies:
 ```bash
