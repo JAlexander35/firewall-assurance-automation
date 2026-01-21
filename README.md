@@ -145,7 +145,7 @@ For detailed usage instructions and workflow guidance, see [USAGE.md](USAGE.md).
 
 The following screenshots demonstrate example outputs generated using sanitized test data.
 
-<img src="docs/images/xlsx Findings.png" width="900">
+<img src="docs/images/xlsx Findings.png" width="1500">
 
 <img src="docs/images/xlsx NIST Mappings.png" width="700">
 
