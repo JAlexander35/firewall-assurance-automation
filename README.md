@@ -4,6 +4,8 @@
 Firewall Assurance Automation is a Python-based tool designed to analyze CSV exports from Check Point SmartConsole and automatically generate standardized firewall policy findings. The tool supports firewall assurance, compliance assessments, and risk reporting by converting raw policy data into structured, review-ready outputs.
 
 This project emphasizes repeatability, traceability, and analyst oversight, aligning with enterprise and DoD-style assessment workflows.
+This project is a reference implementation built using a personal lab environment and is not affiliated with, endorsed by, or used by any government agency or contractor.
+
 
 ---
 
@@ -18,7 +20,7 @@ This project emphasizes repeatability, traceability, and analyst oversight, alig
 - Assigns explainable risk levels (High / Medium / Low)
 - Generates analyst-ready findings and remediation guidance
 - Maps findings to compliance references (STIG / SRG / CIS / NIST)
-- Produces a single Excel workbook suitable for assessment and reporting use
+- Produces a single Excel workbook suitable for assessment and reporting support
 
 ---
 
@@ -145,7 +147,7 @@ For detailed usage instructions and workflow guidance, see [USAGE.md](USAGE.md).
 
 The following screenshots demonstrate example outputs generated using sanitized test data.
 
-<img src="docs/images/xlsx Findings.png" width="1500">
+<img src="docs/images/xlsx_findings.png" width="1500">
 
-<img src="docs/images/xlsx NIST Mappings.png" width="700">
+<img src="docs/images/xlsx_nist_mappings.png" width="700">
 
