@@ -44,3 +44,100 @@ All outputs should be reviewed and validated by a qualified analyst prior to inc
 Install dependencies:
 ```bash
 pip install -r requirements.txt
+
+```
+
+## Basic Usage
+```bash
+python src/smartconsole_findings_generator.py -i "<SmartConsole_Export>.csv"
+
+```
+By default, the script generates an Excel file named:
+```php-template
+<INPUT_FILENAME>_STANDARDIZED.xlsx
+```
+Example:
+```bash
+python src/smartconsole_findings_generator.py -i "Policy_Export.csv"
+```
+
+---
+
+### Optional Parameters
+- Specify output file:
+```bash
+-o "Findings_Output.xlsx"
+```
+- Provide a control mapping file (STIG / SRG / CIS / NIST):
+```bash
+-m mappings/control_mapping.csv
+```
+- Adjust what qualifies as a “broad” subnet (default: broader than /24):
+```bash
+--broad-threshold 24
+```
+- Override embedded compliance standards text:
+```bash
+--standards "NIST SP 800-53 Rev. 5; DoDI 8500.01; DoDI 8510.01"
+```
+
+---
+
+## Output Structure
+
+The generated Excel workbook includes:
+
+### Firewall Rules & Findings
+- Standardized rule fields
+- Automated risk flags
+- Risk level classification
+- Human-readable findings and remediation guidance
+- Evidence summaries for audit traceability
+- Analyst workflow fields:
+  - `Analyst_Status`
+  - `Risk_Final`
+  - `Analyst_Notes`
+
+### Summary Tabs
+- Risk level distribution
+- Rule action breakdown
+- ANY usage summary
+- Logging gap summary
+- VPN-constrained rule summary
+
+### Run Metadata
+- Script version
+- Execution timestamp
+- Input file path
+- Input file SHA-256 hash
+- Broad subnet threshold
+- Standards referenced
+- Mapping file used (if applicable)
+
+---
+
+## Data Handling & Security
+- This repository intentionally excludes real firewall exports and operational data
+- Example inputs (if provided) are synthetic and sanitized
+- Users are responsible for ensuring compliance with organizational data handling policies
+
+---
+
+## Limitations
+- Analysis is based solely on exported configuration data
+- Risk scoring is heuristic and intended to support, not replace, analyst judgment
+- Compliance mappings may require customization for specific environments
+
+---
+
+## Disclaimer
+This tool is provided for assessment and analysis purposes only.  
+It does not replace formal security reviews, accreditation decisions, or authoritative compliance determinations.
+
+Use in accordance with organizational policies and applicable regulations.
+
+---
+
+## Documentation
+For detailed usage instructions and workflow guidance, see [USAGE.md](USAGE.md).
+
