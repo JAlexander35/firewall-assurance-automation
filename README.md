@@ -134,10 +134,18 @@ The generated Excel workbook includes:
 This tool is provided for assessment and analysis purposes only.  
 It does not replace formal security reviews, accreditation decisions, or authoritative compliance determinations.
 
-Use in accordance with organizational policies and applicable regulations.
+All example outputs were generated from a personal homelab environment using synthetic firewall rules and do not represent any production or operational system.
 
 ---
 
 ## Documentation
 For detailed usage instructions and workflow guidance, see [USAGE.md](USAGE.md).
+
+## Example Output
+
+The following screenshots demonstrate example outputs generated using sanitized test data.
+
+<img src="docs/images/xlsx Findings.png" width="900">
+
+<img src="docs/images/xlsx NIST Mappings.png" width="700">
 
